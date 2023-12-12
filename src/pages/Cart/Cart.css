@@ -1,0 +1,236 @@
+.product-list .thumbnail {
+    width: 70px;
+    margin-right: 20px;
+}
+.product-list li {
+    margin-bottom: 30px;
+}
+.product-list li .grouping {
+    position: relative;
+    float: left;
+    padding-left: 45px;
+}
+.product-list .variants {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+.product-list .variants h4 {
+    line-height: initial;
+    margin-bottom: 5px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.product-list .variants > div {
+    font-size: 14px;
+    line-height: 1.4;
+}
+.product-list .variants .item-remove {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+.product-list .item-remove {
+    color: #ff4757;
+    background: #ff47571a;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    transition: color .3s, background-color .3s;
+}
+.product-list .item-remove:hover {
+    color: d1d8e0;
+    background: #212121;
+}
+.product-list .quantity {
+    position: absolute;
+    left: 0;
+    top: 0;
+    max-width: 30px;
+}
+.product-list .quantity .control {
+    background: #f1f2f6;
+    border-radius: 5px;
+}
+.product-list .quantity .control > * {
+    height: 30px;
+    border: 0;
+    outline: 0;
+    text-align: center;
+    background: transparent;
+}
+.product-list .quantity button {
+    font-size: 20px;
+    line-height: initial;
+    width: 100%;
+    cursor: pointer;
+}
+
+.page-cart .product-list {
+    position: relative;
+}
+.has-bg::before, .has-bg::after {
+    /* content: ''; */
+    position: absolute;
+    height: 100%;
+    z-index: -1;
+    /* background: #f1f2f6; */
+}
+.has-bg::before {
+    top: auto;
+    left: 0;
+    width: 50%;
+}
+.has-bg::after {
+    top: 0;
+    right: 100%;
+    width: 100%;
+}
+.page-cart .product-list li,
+.page-cart .cart-total .grouping {
+    display: grid;
+    margin: 0;
+}
+.cart-table .product-list .table-title {
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+.cart-table .product-list li .grouping {
+    --grid-col: 75px;
+    padding: 30px 0;
+    align-items: center;
+}
+.cart-table .product-list li .grouping:last-child {
+    border-top: 1px solid #f1f2f6;
+    text-align: center;
+    --gutter: 0;
+}
+.cart-table .product-list .thumbnail {
+    position: relative;
+    width: 120px;
+    height: 120px;
+    margin: 0;
+}
+.cart-table .product-list .quantity {
+    position: relative;
+    max-width: 100px;
+    margin: 0 auto;
+}
+.cart-table .product-list .control {
+    display: flex;
+    align-items: center;
+    padding: 0;
+    margin: 0 auto;
+}
+.cart-table .product-list .thumbnail,
+.cart-table.item-remove {
+    margin-left: auto;
+    margin-right: auto;
+}
+.cart-table .product-list :where(.table-title, .price) {
+    display: none;
+}
+.cart-total .has-bg::before, 
+.cart-total .has-bg::after {
+    content: '';
+    background: #212121;
+    width: 100%;
+    bottom: auto;
+    top: 0;
+}
+.cart-total .has-bg::before {
+    right: 100%;
+    left: auto;
+}
+.cart-total .has-bg::after {
+    left: 100%;
+}
+.cart-total .product-list {
+    background: #212121;
+    color: #fff;
+}
+.cart-total .grouping > div {
+    padding-top: 40px;
+    padding-bottom: 60px;
+}
+.cart-total .grouping {
+    font-weight: 600;
+    text-transform: uppercase;
+}
+.cart-total .add-note {
+    text-align: center;
+}
+.cart-total .add-note textarea {
+    max-width: 300px;
+    border-color: transparent;
+    outline: 0;
+    color: #fff;
+    background: transparent;
+    text-transform: uppercase;
+    padding: 15px;
+    border-radius: 10px;
+    transition: border .3s;
+}
+.cart-total .add-note :is(textarea:hover, textarea:focus, :not(:placeholder-shown)) {
+    border-color: #687080;
+}
+.cart-total .add-note textarea:not(:placeholder-shown) {
+    text-transform: capitalize;
+    font-weight: initial;
+}
+.cart-total .sub-total {
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    max-width: 400px;
+    margin: 0 auto;
+}
+.cart-total .sub-total-price {
+    padding-left: 30px;
+    font-size: 26px;
+}
+.cart-total .sub-terms {
+    font-weight: initial;
+    text-transform: capitalize;
+}
+.cart-total .button a.secondary-btn {
+    background: #fff;
+    color: #212121;
+    border: 0;
+    text-transform: capitalize;
+    line-height: 54px;
+    border-radius: 7px;
+    min-width: 240px;
+}
+.cart-total .button a.secondary-btn:hover {
+    background: #687080;
+    color: #fff;
+}
+
+
+
+
+@media (min-width: 768px) {
+    .page-cart .product-list li,
+    .page-cart .cart-total .grouping {
+        grid-template-columns: 1fr 1fr;
+    }
+    .has-bg::before, .has-bg::after {
+        content: '';
+        background: #f1f2f6;
+    }
+    .cart-total .sub-total {
+        padding-left: 10%;
+        margin: 0;
+    }
+    .cart-table .product-list :where(.table-title, .price) {
+        display: block;
+    }
+}
