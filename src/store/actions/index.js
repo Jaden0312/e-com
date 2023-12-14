@@ -1,5 +1,10 @@
-import { ADD_LIST } from "./constants";
-import { DELETE_LIST } from "./constants";
+import 
+{ ADD_LIST,
+  DELETE_LIST,
+  INCREASE_QTY,
+  GLOBALCART_OPEN,
+  GLOBALCART_CLOSE } 
+from "./constants";
 import { FETCH_PRODUCTS_REQUEST } from "./constants";
 import { FETCH_PRODUCTS_ERROR } from "./constants";
 import { FETCH_PRODUCTS_SUCCESS } from "./constants";
@@ -16,6 +21,27 @@ export const deleteList = (item) => {
   return {
     type: DELETE_LIST,
     payload: item,
+  }
+}
+
+export const increaseCartQty = (id) => {
+  return {
+    type: INCREASE_QTY,
+    payload: id,
+  }
+}
+
+export const openGlobalCart = (toggle) => {
+  return {
+    type: GLOBALCART_OPEN,
+    payload: toggle,
+  }
+}
+
+export const closeGlobalCart = (toggle) => {
+  return {
+    type: GLOBALCART_CLOSE,
+    payload: toggle,
   }
 }
 

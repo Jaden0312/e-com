@@ -44,7 +44,7 @@
     transition: color .3s, background-color .3s;
 }
 .product-list .item-remove:hover {
-    color: d1d8e0;
+    color: #d1d8e0;
     background: #212121;
 }
 .product-list .quantity {

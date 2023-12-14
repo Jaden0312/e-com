@@ -23,6 +23,10 @@ class Outer extends React.Component {
             } )
     }
 
+    loginUser = () => {
+
+    }
+
     render() {
         
         return (

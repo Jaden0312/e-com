@@ -11,6 +11,11 @@ import Cartlist from '../../components/Cartlist/Cartlist';
 class Cart extends React.Component {
     render() {
         console.log(this.props)
+        const subtotal = this.props.cart.reduce((total,item)=>{
+            return total + item.price * item.qty;
+        },0);
+
+        console.log(subtotal)
         return (
             <>
                 <div className='page-cart'>
@@ -58,7 +63,7 @@ class Cart extends React.Component {
                                                 <div className='sub-total'>
                                                     <div className='sub-pricing'>
                                                         <span>Subtotal</span>
-                                                        <span className='sub-total-price'>₩195,700</span>
+                                                        <span className='sub-total-price'>₩{subtotal}</span>
                                                     </div>
                                                     <div className='sub-terms'>
                                                         <input type='checkbox' className='checker' id='terms'></input>

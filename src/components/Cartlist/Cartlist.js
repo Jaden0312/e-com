@@ -4,16 +4,23 @@ import { Link } from 'react-router-dom';
 import { IoMdClose } from "react-icons/io";
 import { connect } from 'react-redux';
 import withRouter from '../../components/routes/withRouter';
+import { deleteList,increaseCartQty } from '../../store/actions';
 
 class Cartlist extends React.Component {
     
     deleteItem = (id) => {
         console.log(id);
+        this.props.deleteItemList(id);
+    }
 
+    increaseQty = (id) => {
+        console.log(id);
+        this.props.increaseCartQty(id)
     }
 
     render() {
-        // console.log(this.props.cart)
+        console.log(this.props)
+        const itemTotal = this.props.price * this.props.qty;
         return (
             <>
                 <li className='dotgrid'>
@@ -42,12 +49,12 @@ class Cartlist extends React.Component {
                             <div className='control'>
                                 <button>-</button>
                                 <input type='text' value={this.props.qty}></input>
-                                <button>+</button>
+                                <button onClick={()=>this.increaseQty(this.props.id)}>+</button>
                             </div>
                         </div>
-                        <div className='price-sub'>₩{ this.props.price }</div>
+                        <div className='price-sub'>₩{ itemTotal }</div>
                         <a className='item-remove'>
-                            <IoMdClose onClick={() => this.deleteItem(this.props)}/>
+                            <IoMdClose onClick={()=>this.deleteItem(this.props.id)}/>
                         </a>
                     </div>
 
@@ -66,9 +73,10 @@ const mapStateToProps = (state) => {
 };
 
 const mapDispatchToProps = (dispatch) => {
-    return {
-
-    }
+        return {
+            deleteItemList: (item) => dispatch(deleteList(item)),
+            increaseCartQty: (qty) => dispatch(increaseCartQty(qty)),
+        }
 };
 
 const connectToStore = connect(mapStateToProps, mapDispatchToProps);

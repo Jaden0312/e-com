@@ -1,0 +1,130 @@
+/* --Floating Cart-- */
+
+.cart-menu .wrap {
+    float: right;
+    --transX: 100%;
+}
+
+.cart-menu .close-trigger {
+    right: auto;
+    left: -40px;
+}
+.cart-menu .wrapper {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.cart-menu .cart-outer > .wrapper {
+    height: 100vh;
+    padding: 0;
+}
+.cart-menu .cart-header {
+    padding: 30px 0;
+    font-family: 'Playfair Display', serif;
+}
+.product-list li {
+    margin-bottom: 30px;
+}
+.cart-body .product-list .grouping {
+    position: relative;
+    float: left;
+    padding-left: 45px;
+}
+.product-list .quantity {
+    position: absolute;
+    left: 0;
+    top: 0;
+    max-width: 30px;
+}
+.product-list .quantity .control{
+    background: #f1f2f6;
+    border-radius: 5px;
+}
+.product-list .quantity .control > * {
+    height: 30px;
+    border: 0;
+    outline: 0;
+    text-align: center;
+    background: transparent;
+}
+.product-list .quantity button {
+    font-size: 20px;
+    line-height: initial;
+    width: 100%;
+    cursor: pointer;
+}
+
+.product-list .thumbnail {
+    width: 70px;
+    margin-right: 20px;
+}
+.product-list .variants {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+.product-list .variants h4 {
+    line-height: initial;
+    margin-bottom: 5px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.product-list .variants > div {
+    font-size: 14px;
+    line-height: 1.4;
+}
+.product-list .variants .item-remove {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+
+.cart-menu .cart-footer {
+    margin: 0 -20px;
+    padding: 20px;
+    background: #f1f2f6;
+    margin-top: auto;
+}
+.cart-footer .math-pricing ul li {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+}
+.cart-footer .math-pricing ul li span:not(.value) {
+    color: #687080;
+}
+.cart-footer .math-pricing .total {
+    font-size: 18px;
+    font-weight: 600;
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px solid #d1d8e0;
+}
+.cart-footer .button {
+    text-align: center;
+}
+.cart-footer .button .secondary-btn {
+    display: block;
+    margin: 20px 0 10px;
+    border: 0;
+    text-transform: capitalize;
+    line-height: 54px;
+    border-radius: 7px;
+    min-width: 240px;
+}
+.cart-footer .button .secondary-btn:hover {
+    background: #687080;
+    color: #fff;
+}
+.grey-link {
+    color: inherit;
+    transition: color .3s;
+}
+.grey-color, .grey-link:hover {
+    color: #687080;
+}
+.cart-menu .product-list > .wrapper {
+    max-height: 400px;
+}
